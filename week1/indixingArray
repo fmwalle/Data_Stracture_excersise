@@ -1,0 +1,16 @@
+def indicesOfTarget(arr: list[int], target: int):
+  indcise=[]
+  index=0
+  for number in arr:
+   if number==target :
+    
+    indcise.append(index)
+
+    
+   index+=1
+  return indcise  
+     
+     
+  
+  
+print(indicesOfTarget([20,30,30],30))

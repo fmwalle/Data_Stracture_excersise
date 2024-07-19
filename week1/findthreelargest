@@ -1,0 +1,28 @@
+def find_three_largest(nums):
+  if len(nums) <= 3:
+    return nums
+  result = []
+  nums.sort(reverse=True)
+  
+  return nums[:3]
+
+
+print(find_three_largest([1, 0, 0, 4, 7, 100, 10]))
+
+
+def find_three_largest_better_way(nums):
+
+  if len(nums)<=3 : return nums
+  upper_bound=float('inf')
+  result=[]
+
+  for i in range(3):
+    largest=float('-inf')
+    for val in (nums):
+        if val>largest and val <upper_bound :
+      
+          largest=val
+    result.append(largest)    
+    upper_bound=largest  
+
+print(find_three_largest([1, 0, 0, 4, 7, 100, 10]))  
