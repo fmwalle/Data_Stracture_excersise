@@ -31,3 +31,12 @@ def countingUniqueElemnts(array:list[int]):
     return counting 
 
 print(countingUniqueElemnts([1,2,2,3,4,3,5,6,]))           
+
+def removeDuplicateFellows(fellows):
+  uniqueFellows = set()
+  output = []
+  for fellow in fellows:
+    if fellow not in uniqueFellows:
+      uniqueFellows.add(fellow)
+      output.append(fellow)
+  return output
