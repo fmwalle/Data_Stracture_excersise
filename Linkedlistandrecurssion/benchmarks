@@ -25,3 +25,44 @@ Given a linked list, swap the head (first element) and the tail (last element) o
 Example:
 Input: [1,2,3,4,5,6]
 Output: [6,2,3,4,5,1]
+Given a linked list of integers, return the sum of every other value, starting with the second.
+
+Remove the nth node from the end of a linked list. n is 1-indexed. Assume n will always be smaller or equal to the length of the linked list.
+
+Example:
+Input: [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+Remove the nth node from the end of a linked list. n is 1-indexed. Assume n will always be smaller or equal to the length of the linked list.
+
+Example:
+Input: [1,2,3,4,5], n = 2
+Output: [1,2,3,5]
+
+
+Write a function which determines whether a positive number is an integer power of three. For example:
+
+Q. Given a linked list, insert a node with the value 0 after each existing node. This should double the length of the original list and every other value should be a 0.
+
+
+Q. Given a target integer and count integer, create a linked list of length count, where each node has the value target.
+Q. Given a linked list of positive integers, find the first element that occurs at least k number of times.
+
+If no element occurs k times, return -1.
+You may assume k is greater than zero.
+
+
+Q. Given a linked list, limit the number of repetitions to k. Iterate through the linked list, keeping track of how many times the value has been repeated. Once a value has been repeated k target number of times, remove any future instances of that node.
+
+Q. Given a linked list, remove all nodes with an odd value from the list.
+
+[execution time limit] 4 seconds (py3)
+
+[memory limit] 1 GB
+
+[input] linkedlist.integer head
+
+head of the list
+
+[output] linkedlist.integer
+
+head of the updated list
