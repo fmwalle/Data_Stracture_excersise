@@ -66,3 +66,26 @@ head of the list
 [output] linkedlist.integer
 
 head of the updated list
+
+#
+Q. Given a linked list and a target, remove all nodes that are NOT the target value
+
+For example, given this linked list:
+1 -> 5 -> 5 -> 2, target 5
+
+Return this list:
+5 -> 5
+
+#Q. Remove every other node in a linked list, starting from the second node.
+
+For example, given:
+1 -> 3 -> 6 -> 2
+
+Return:
+1 -> 6
+
+Given the head of a singly linked list, return true if it is a 
+palindrome
+ or false otherwise.
+
+ https://leetcode.com/problems/palindrome-linked-list/description/
