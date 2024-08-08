@@ -74,7 +74,51 @@ def print_linked_list(head):
         print(current.value, end=" -> ")
         current = current.next
     print("None")
+def sumofTwoLists(head1,head2):
+     if not head1 and not head2:
+         return None
+     if not head1:
+         return head2
+     if not head2:
+         return head1
+     sentinetal=Node(0)
+     dummy=sentinetal
+     while head1 and head2:
+         sum=0
+         if head1:
+             sum+=head1.value
+         if head2:
+             sum+=head2.value
+         dummy.next=Node(sum)
+         head1=head1.next
+         head2=head2.next
+         dummy=dummy.next
+     if head1:
+         dummy.next=Node(head1.value)
+     if head2:
+         dummy.next=Node(head2.value)    
+     return sentinetal.next                
+def interzeroBeforeTheTargetElemnt(head,target):
+    if not head:
+        return None
+    current=head
+    dummy=Node(0)
+    prev=dummy
+    dummy.next=head
 
-mynode=(Node(1,Node(2,Node(1,Node(3,Node(4)))))) 
+    while current:
+        if current.value==target:
+            newnode=Node(0)
+            prev.next=newnode
+            newnode.next=current
+           
+        prev=current    
+        current=current.next
+    return dummy.next    
 
-print(print_linked_list(removeheadandtail(mynode)))
+            
+
+mynode=(Node(2,Node(2,Node(1,Node(2,Node(4)))))) 
+mynode2=(Node(1,Node(2,Node(1,Node(3,Node(4)))))) 
+
+print(print_linked_list(interzeroBeforeTheTargetElemnt(mynode,2)))
