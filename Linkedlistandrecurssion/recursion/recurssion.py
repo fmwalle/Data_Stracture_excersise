@@ -1,3 +1,4 @@
+import math
 def factorial(n)->int:
     if n<0:
         return -1
@@ -15,13 +16,32 @@ def recursively(n):
         return 1
     else :
         return n*recursively(n-1)
-print(recursively(5))  
+print(recursively(5)) 
 
-def recursiveMax(array,curMax=float('-inf'),i=0)->int:
-      if i <len(array):
-          return recursiveMax(array, max(curMax,array[i]),i+1)
-      return curMax
-print(recursiveMax([1,2,3,4,5,90]))
+
+def exponential(n,k):
+    def helpExponent(n,current,count):
+        if current>n:
+            return -1
+        if current==n:
+            return count
+      
+        return helpExponent(n,current*k,count+1)
+    return helpExponent(n,k,1)  
+print(exponential(9,3)) 
+
+
+print("int")
+print(int(-3 / 2))
+print("floor")
+print(math.floor(3 /2))
+print("ceil")
+print(math.ceil(3 / 2))
+print("sqrt")
+print(math.sqrt(2))
+print("pow")
+print(math.pow(2, 3))
+
 
    
 
