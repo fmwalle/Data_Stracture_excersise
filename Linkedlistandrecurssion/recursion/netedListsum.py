@@ -10,7 +10,11 @@ def sumNestedList(array:list[int])->int:
 
 print(sumNestedList([1,2,3]))
 
-
+def sumNested(array):
+    def helperSum(array):
+        totalsum=0
+        for elemnt in array:
+            if isinstance 
 
 def sumNestedList(array):
     total_sum = 0
@@ -25,6 +29,27 @@ def sumNestedList(array):
                 total_sum += element
     
     return total_sum
+
+def sumNestedListWithDepth(array):
+    total_sum = 0
+    stack = [(array, 1)]  # Each element in stack is a tuple (list, depth)
+    
+    while stack:
+        current, depth = stack.pop()
+        current_sum = 0
+        for element in current:
+            if isinstance(element, list):
+                stack.append((element, depth + 1))
+            else:
+                current_sum += element
+        
+        total_sum += current_sum * depth
+    
+    return total_sum
+
+# Example usage
+print(sumNestedListWithDepth([4, [2, 3]]))  # Output: 14
+print(sumNestedListWithDepth([4, [2, [3]]]))  # Output: 26
 
 # Example usage
 print(sumNestedList([1, 2, 3]))  # Output: 6
