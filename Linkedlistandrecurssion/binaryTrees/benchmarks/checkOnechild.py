@@ -47,6 +47,21 @@ ceo = Node(1,
 partner = Node(5,
             Node(10)
           )
+def findElemntintree(root,target):
+   if not root:
+      return False
+   if root.val==target:
+      return True
+   return findElemntintree(root.left,target)  and findElemntintree(root.right,target) 
+# here is the binary search tree
+def bst(root,target):
+  if target==root.val:
+     return True
+  if target<root.val:
+     return bst(root.left,target)
+  elif target > root.val:
+     return bst(root.right,target)
+      
 print(isDirectReport(partner, 5, 10))
 print(isDirectReport(ceo, 1, 2) )
 print(isDirectReport(ceo, 1, 4))

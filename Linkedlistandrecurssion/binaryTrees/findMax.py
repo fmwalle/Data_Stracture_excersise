@@ -15,6 +15,31 @@ def findMax(root):
 
 
     return max(root.value,left_max,right_max)   
+def findMostFrequentNodeValue(root):
+    # create a dictionery class
+        freq=dict()
+    # add number of frequencyis in dictionery
+        def helpFrequennt(node):
+         if not node:
+            return
+         if node.value in freq:
+          freq[node.value]+=1
+         else:
+          freq[node.value]=1
+         if node.left:
+          helpFrequennt(node.left)
+         if node.right:
+           helpFrequennt(node.right)
+        helpFrequennt(root)    
+        highestfreq=-1
+        highestval=0
+        for keys,val in freq.items():
+         if val>highestfreq:
+            highestfreq=val
+            highestval=keys    
+        return highestval  
+ 
+
 def countElemntsInBineryTree(root):
      if not root:
          return 0
@@ -54,13 +79,35 @@ def isUnivalTree( root):
             return leftnode and rightnode
         return uniHelper(root,root.value) 
 
+def findMax(root):
+    if not root:
+        return float('-inf')
+    leftNode=findMax(root.left)
+    rightNode=findMax(root.right)
 
-root=Node(1)
-root.left=Node(1)
-root.right=Node(1)
-root.left.left=Node(1)
-root.left.right=Node(1)
-root.right.left=Node(1)
-root.right.right=Node(2)
+        
 
-print(isUnivalTree(root))
+    return max(root.value,leftNode,rightNode) 
+def countElemnt(root):
+    if not root:
+        return 0
+    leftNode=countElemnt(root.left)
+    rightNode=countElemnt(root.right)
+    return 1+leftNode+rightNode
+
+
+root = Node(10)
+root.left = Node(5)
+root.right = Node(20)
+root.left.left = Node(1)
+root.left.right = Node(8)
+root.right.right = Node(25)
+
+print(countElemnt(root))
+root = Node(5,
+  Node(10,
+    Node(1),
+    Node(7)),
+  Node(1))
+print(findMostFrequentNodeValue(root))
+

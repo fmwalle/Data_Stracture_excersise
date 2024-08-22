@@ -1,0 +1,73 @@
+Q. Given an binary tree and a target subtree, determine if the original tree contains a target subtree. A subtree of a tree is a tree consisting of a node in the original tree and all of its descendants while maintaining the same structure.
+
+Examples:
+
+Given a tree:
+            1
+          /  \
+        2      3
+      /  \
+    4     5
+          /
+        6
+
+and a subtree:
+        5 
+      / 
+    6
+
+returns true
+Given a tree:
+            1
+          /  \
+        2      3
+      /  \
+    4     5
+          /
+        6
+and a subtree:
+        2 
+      /  \
+    4     5
+
+returns false (6 is missing in a subtree)
+
+#Q. Given a binary tree, return the values of the nodes when facing the tree from the right side (from top to bottom).
+
+Example:
+Input:
+   1              <---
+ /   \
+2     5         <---
+ \  
+  7               <---
+Output: [1, 5, 7]
+
+
+If the input node is null, return -1, indicating that the height of the tree at the root is non-existent
+Store the return value of recursively calling the function on the left child in a left variable
+Store the return value of recursively calling the function on the left child in a right variable
+Return the result from choosing the maximum between left and right and then adding 1. The 1 is to include counting the current node's height.
+
+
+
+Base case: if the root is null, return null.
+Create a new node initialized with the same value as the root
+Recursively call the function on the left child of the original tree and assign the result to the right child of the new node
+Recursively call the function on the right child of the original tree and assign the result to the left child of the new node
+Return the new node
+
+
+Initialize a maxPathSum variable to negative infinity
+In a helper function that accepts a binary tree node as its only parameter
+If the input node is null, return 0
+Recursively call dfs on its left child and store the result in a leftPathSum variable
+Recursively call dfs on its right child and store the result in a rightPathSum variable
+Calculate the current path sum by adding the left and right paths with the value of the current node
+Update the maxPathSum to be the greater of itself or the current path. Python users need to first declare maxPathSum as nonlocal
+return the maximum of two values:
+root.value + max(leftPathSum, rightPathSum): This represents the best path sum at the current node, considering only one of its subtrees (left or right) or none, if both are negative. It ensures that the path sum is maximized at every step.
+0: Returning 0 instead of a negative sum allows the function to exclude the current node and its subtrees from the path if they would decrease the overall sum.
+Call the helper function with the root
+If maxPath is still negative infinity, return 0.
+Otherwise return the value of the max path
