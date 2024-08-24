@@ -43,3 +43,50 @@ def changeHexadecimal(str)->int:
     return sum     
 
 print(changeHexadecimal('2694'))
+
+def count_sum_eight(nums):
+    sum=0
+    count=0
+    while nums>0:
+        if nums%10==8:
+            count+=1
+            sum+=count
+        elif nums%10!=8:
+            count-=1
+            sum+=count
+        nums=nums//10
+    return sum 
+
+#print(count_sum_eight(8818))    
+def count_Eight_recursive(nums):
+       def helper8(nums):
+        if nums == 0:
+            return 0
+        if nums % 10 == 8:
+           if (nums//10)%10==8:
+               return 2+helper8(nums//10)
+           else:
+               return 1+helper8(nums//10)
+        else:
+            return helper8(nums // 10)  # Added return here
+
+       return helper8(nums)   
+    
+print(count_Eight_recursive(8818))    
+
+def nonsense(a,b):
+   
+    if a==b:
+        return 5
+    c=nonsense(a+1,b-1)+a+b
+    print(c)
+    return c 
+print(nonsense(3,9))
+
+def runi(a,b):
+    if len(a)>=b:
+        return "Ith"
+    a=a+runi(a,b-1)+"ber"
+    print(a)
+    return a
+print(runi("jah",6))
