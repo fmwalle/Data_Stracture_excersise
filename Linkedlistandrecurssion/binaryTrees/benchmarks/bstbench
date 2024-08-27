@@ -17,3 +17,14 @@ For this tree, the result is 4 (1 + 3), since the 9 is excluded, so the left bra
   1 3    8
         7
 returns 12 because 1 + 3 + 8 is the largest sum of any level in the tree.
+
+Given a binary tree and a depth, remove all nodes that are lower than that depth.
+
+Function Description
+replaceNodeValuesBT has the following parameters:
+
+
+Given a binary tree, return the most frequent value. If multiple most frequent exist, return any at random.
+
+Function Description
+solution has the following parameters:
