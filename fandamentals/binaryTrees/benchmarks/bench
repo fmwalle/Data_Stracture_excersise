@@ -71,3 +71,9 @@ root.value + max(leftPathSum, rightPathSum): This represents the best path sum a
 Call the helper function with the root
 If maxPath is still negative infinity, return 0.
 Otherwise return the value of the max path
+
+
+what is mena by "what is means this sentense"" he said. A lot of
+them have said: "We don't like wearing
+black-and-white stripes" and my
+response is "Too bad, don't come to jail""
