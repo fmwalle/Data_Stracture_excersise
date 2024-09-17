@@ -1,0 +1,135 @@
+. Design a Data Structure for Efficient Frequency Tracking
+Problem: Design a data structure that efficiently tracks the frequency of elements in a dataset. The data structure should be able to:
+
+Initialize with an array of elements.
+Provide a method to fetch the frequency of a particular element.
+Update the frequency whenever an element is accessed.
+Maintain the elements in the order of their frequency, with the most frequent elements at the end.
+Example:
+
+python
+Copy code
+const freqTracker = new FrequencyTracker([3, 5, 3, 7]);
+console.log(freqTracker.fetch(3)); // returns 2
+console.log(freqTracker.fetch(7)); // returns 1
+freqTracker.fetch(5); // Access 5, now 5 has frequency 2
+console.log(freqTracker.fetch(5)); // returns 2
+Edge Cases:
+
+What should happen if an element is fetched that doesn’t exist in the array?
+How would you handle ties in frequency?
+2. Design a Data Structure for Recently Used Items with Limited Capacity
+Problem: Design a data structure that maintains a fixed-size list of the most recently accessed items (a simplified LRU cache). When a new item is accessed or added:
+
+If the item already exists in the list, move it to the end (most recently used).
+If the item doesn’t exist and the list is full, remove the least recently used item (from the beginning) before adding the new item.
+If the list isn’t full, simply add the new item.
+Example:
+
+python
+Copy code
+const recentItems = new RecentItems(3);  // List has a capacity of 3
+recentItems.add(5);
+recentItems.add(7);
+recentItems.add(3);
+recentItems.add(5); // 5 is moved to the end
+console.log(recentItems.fetch()); // returns [7, 3, 5]
+recentItems.add(8); // 7 is removed, 8 is added
+console.log(recentItems.fetch()); // returns [3, 5, 8]
+Edge Cases:
+
+What happens if the list is empty?
+How do you ensure that the list doesn’t exceed the maximum size?
+3. Design a Data Structure for Efficient Range Queries
+Problem: Design a data structure that efficiently manages a list of numbers and allows range queries. The data structure should:
+
+Initialize with an array of numbers.
+Provide a method to fetch the sum of a range of elements (inclusive of the start and end indices).
+The fetch operation should be optimized to minimize the time complexity.
+Example:
+
+python
+Copy code
+const rangeQuery = new RangeQuery([1, 2, 3, 4, 5]);
+console.log(rangeQuery.sum(2, 4)); // returns 9 (2+3+4)
+console.log(rangeQuery.sum(1, 5)); // returns 15 (1+2+3+4+5)
+Edge Cases:
+
+What if the range is outside the bounds of the array?
+How would you optimize the sum operation for large datasets?
+4. Design a Data Structure for Tracking Median
+Problem: Design a data structure that tracks the median of a dynamically updating dataset. The data structure should:
+
+Initialize with an array of numbers.
+Provide a method to fetch the current median.
+Update the median whenever a new number is added or an existing number is removed.
+Example:
+
+python
+Copy code
+const medianTracker = new MedianTracker([1, 3, 5]);
+console.log(medianTracker.fetchMedian()); // returns 3
+medianTracker.add(2);
+console.log(medianTracker.fetchMedian()); // returns 2.5
+medianTracker.remove(5);
+console.log(medianTracker.fetchMedian()); // returns 2
+Edge Cases:
+
+How would you handle the case when the dataset is empty?
+What should happen if there’s an even number of elements in the dataset?
+5. Design a Data Structure for Efficiently Finding the Kth Largest Element
+Problem: Design a data structure that allows efficient retrieval of the Kth largest element in a dynamic dataset. The data structure should:
+
+Initialize with an array of numbers.
+Provide a method to fetch the Kth largest element.
+The fetch operation should be optimized for large datasets.
+Example:
+
+python
+Copy code
+const kthLargest = new KthLargest([10, 5, 20, 15], 3);
+console.log(kthLargest.fetchKthLargest()); // returns 10 (3rd largest element)
+kthLargest.add(25);
+console.log(kthLargest.fetchKthLargest()); // returns 15 (3rd largest element)
+Edge Cases:
+
+How would you handle the case when K is larger than the size of the dataset?
+What if the dataset contains duplicate elements?
+6. Design a Data Structure for Efficiently Managing Intervals
+Problem: Design a data structure that manages intervals and allows for efficient interval merging and overlap queries. The data structure should:
+
+Initialize with a list of intervals.
+Provide methods to merge overlapping intervals.
+Provide a method to query if a given interval overlaps with any existing interval.
+Example:
+
+python
+Copy code
+const intervalManager = new IntervalManager([[1, 5], [10, 15]]);
+intervalManager.addInterval([2, 6]);  // Merges with [1, 5] to become [1, 6]
+console.log(intervalManager.getIntervals()); // returns [[1, 6], [10, 15]]
+console.log(intervalManager.queryOverlap([5, 11])); // returns true (overlaps with [1, 6] and [10, 15])
+Edge Cases:
+
+What should happen if an interval completely overlaps existing intervals?
+How would you efficiently handle large numbers of intervals?
+7. Design a Data Structure for Efficient Subarray Sum Queries
+Problem: Design a data structure that allows for efficient subarray sum queries. The data structure should:
+
+Initialize with an array of integers.
+Provide a method to update an element at a specific index.
+Provide a method to fetch the sum of any subarray.
+Example:
+
+python
+Copy code
+const subarraySum = new SubarraySum([1, 2, 3, 4, 5]);
+console.log(subarraySum.fetchSum(2, 4)); // returns 9 (2+3+4)
+subarraySum.update(3, 6); // Updates the value at index 3 to 6
+console.log(subarraySum.fetchSum(2, 4)); // returns 12 (2+6+4)
+Edge Cases:
+
+How would you handle the case where the update or query index is out of bounds?
+How would you optimize the update and sum operations for large datasets?
+Summary
+These questions focus on designing efficient data structures for various scenarios. They require a deep understanding of data structures, algorithmic complexity, and the ability to apply these concepts to real-world problems. By practicing these questions, you’ll be better prepared for similar challenges in interviews.

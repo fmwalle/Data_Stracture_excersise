@@ -1,0 +1,3 @@
+Given a matrix of integers, determine if the matrix is monotonically increasing along all rows and all columns. 
+This means that along every row (left to right) and column (top to bottom), 
+each successive value is AT LEAST as large as the previous value. For example:

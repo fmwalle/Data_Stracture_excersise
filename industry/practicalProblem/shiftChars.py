@@ -11,4 +11,6 @@ def shift_chars(s: str) -> str:
             newStr.append(chars) 
     return ''.join(newStr)           
 
-print(shift_chars("the quick brown fox"))       
+print(shift_chars("b,d"))       
+print(ord('b'))
+print(97%26)
