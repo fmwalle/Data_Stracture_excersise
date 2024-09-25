@@ -15,3 +15,12 @@ def shift_chars(s: str):
     return ''.join(shiftedStr)
 
 print(shift_chars("A b"))       
+def maxProfitPotential(prices: list[float]) -> float:
+
+    minimumBuy=float('inf')
+    maxProfit=0
+
+    for sell in prices:
+        profit=sell-minimumBuy
+        minimumBuy=min(sell,minimumBuy)
+        maxProfit=max(maxProfit,profit)

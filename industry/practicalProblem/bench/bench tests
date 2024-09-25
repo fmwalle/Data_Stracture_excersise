@@ -27,3 +27,12 @@ the output should be solution(balances, requests) = [-2].
 
 After the first request, balances becomes equal to [20, 1000, 900, 40, 90], but the second one turns it into [-10, 1030, 900, 40, 90], which is invalid. Thus, the second request is invalid, and the answer is [-2]. Note that the last request is also invalid, but it shouldn't be included in the answer.
 
+
+
+Given a linked list and pivot number k, partition the nodes so that all nodes less than k come before nodes greater or equal to k. Return the head of the linked list. The relative order of the original nodes should be preserved.
+
+Notice that this is slightly different that the partition step in an algorithm like Quicksort. In this version, the pivot might not end up in the correct final position.
+
+For example:
+Input: [3,6,4,7,2,5,1], k = 4
+Output: [3,2,1,6,4,7,5]
