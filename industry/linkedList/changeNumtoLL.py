@@ -35,7 +35,18 @@ def toString(head: Node) -> None:
     head = head.next
   return " -> ".join(parts)
 
+def swapingTwoadgesntNode(head):
+   if not head or head.next:
+      return None
+   current=head
 
+   while current and current.next:
+      firstNode=current
+      secondNode=current.next
+
+      firstNode.value,secondNode.value=secondNode.value,firstNode.value
+      current=secondNode.next
+   return head   
 head = Node(1, Node(2, Node(3, Node(4, Node(5)))))
 print(toString(changNumtoLL(123)))
 
