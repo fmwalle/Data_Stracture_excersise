@@ -37,5 +37,7 @@ def findAllPermutaions(array):
     helpPermutaion(0,)
     return result         
 print(findAllPermutaions([1,2,3]))
+
+def 
                 
 

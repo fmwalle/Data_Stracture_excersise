@@ -16,6 +16,7 @@ def letterCombinations(digits):
     def helperMap(current,combination):
 
         if len(combination)==len(digits):
+            # change to string because the given was list
             result.append(''.join(combination))
             return
         charsLetter=digits[current]
