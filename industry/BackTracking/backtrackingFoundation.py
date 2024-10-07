@@ -73,7 +73,7 @@ def CombinationSum(array,target):
     def backtrack(currentSubset,reminigTraget,start):
         if reminigTraget==0:
             result.append(currentSubset[:])
-            return
+            
         
         for i in range(start,len(array)):
             if array[i]>reminigTraget:
@@ -83,9 +83,9 @@ def CombinationSum(array,target):
             backtrack(currentSubset,reminigTraget-array[i],i)
 
             currentSubset.pop()
-    backtrack([],7,0)
+    backtrack([],target,0)
     return result
-
+print("combination sum")
 print(CombinationSum([2,3,6,7],7))
 
 def combinationsKdistnict(n,k):
@@ -105,7 +105,26 @@ def combinationsKdistnict(n,k):
 
     backtrack([],1)  
     return result
-print(combinationsKdistnict(4,2))  
+#print(combinationsKdistnict(4,2))
+
+def letterNumberComb(digits):
+    digit_to_char_map = {
+        '2': ['a', 'b', 'c'],
+        '3': ['d', 'e', 'f'],
+        '4': ['g', 'h', 'i'],
+        '5': ['j', 'k', 'l'],
+        '6': ['m', 'n', 'o'],
+        '7': ['p', 'q', 'r', 's'],
+        '8': ['t', 'u', 'v'],
+        '9': ['w', 'x', 'y', 'z']
+    }
+    result=[]
+    def generateCombination(nums,comb):
+        if len(comb)==len(digits):
+            result.append(comb)
+
+            
+
 
 
 
