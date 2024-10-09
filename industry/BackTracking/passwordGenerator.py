@@ -60,3 +60,44 @@ def generateAllHumanFriendlyPasswords(words: list[str], maxLength: int) -> list[
     return result
 print(generateAllHumanFriendlyPasswords(["apple", "dog", "zebra"], 10))     
 
+
+def findwords(board,word):
+   row=len(word)
+   col=len(board[0])
+   def backtrack(r,c,index):
+      if index==len(word):
+         return True
+      if r<0 or r>row or c<0 or c>col or board[r][c]!=word[index]:
+         return False 
+
+      temp=board[r][c]
+      board[r][c]='#'
+
+      found=(backtrack(r+1,c,index+1)or
+       backtrack(r-1,c,index+1)or 
+       backtrack(r,c+1,index+1)or 
+       backtrack(r,c-1,index+1)
+       )   
+
+      board[r][c]=print(found)
+      return found  
+
+   
+
+   for i in range(row):
+      for j in range(col):
+         if board[i][j]==word[0] and backtrack(i,j,0):
+            return True
+   return False
+
+board = [
+  ['D', 'P', 'D', 'A'],
+  ['A', 'V', 'O', 'G'],
+  ['T', 'O', 'N', 'Y'],
+  ['J', 'E', 'S', 'S']
+]
+
+print(findwords(board, "DOG"))
+           
+
+
