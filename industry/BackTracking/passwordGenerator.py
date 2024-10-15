@@ -79,7 +79,8 @@ def findwords(board,word):
        backtrack(r,c-1,index+1)
        )   
 
-      board[r][c]=print(found)
+      board[r][c]=temp
+      
       return found  
 
    

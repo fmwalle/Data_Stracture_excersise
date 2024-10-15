@@ -19,21 +19,21 @@ print(understandPerm("ABC"))
 def permutaionsbuild(nums):
 
   result=[]
-  def helpdfs(start,end):
-    if start==end:
+  def helpdfs(start):
+    if start==len(nums):
       result.append(nums[:])
     else:
 
-      for i in range(start,end):
+      for i in range(start,len(nums)):
 
         nums[start],nums[i]=nums[i],nums[start]
 
-        helpdfs(start+1,end)
+        helpdfs(start+1)
 
         nums[start],nums[i]=nums[i],nums[start]
 
-  helpdfs(0,len(nums))
+  helpdfs(0)
   return result
 
-print(permutaionsbuild([1,2,3]))
+print(permutaionsbuild([2,2,2]))
         
