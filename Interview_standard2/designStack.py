@@ -1,27 +1,30 @@
 from collections import defaultdict
 class FreqStack:
-   def __init__(self):
-     self.freq=defaultdict(int)
+ def __init__(self):
+   self.frquenc_map=defaultdict(int)
+   self.grouping=defaultdict(list)
 
-     self.group=defaultdict(list)
+   self.max_frquency=0
 
-     self.maxfreq=0
-   def push(self,value):
-      self.freq[value]+=1
-      
-      if self.freq[value]>self.maxfreq:
-         self.maxfreq=self.freq[value]
+ def push(self,value):
+   self.frquenc_map[value]+=1
 
-      self.group[self.freq[value]].append(value)
+   if self.frquenc_map[value]>self.max_frquency:
+      self.max_frquency=self.frquenc_map[value]
 
-   def pop(self):
+   self.grouping[self.frquenc_map[value]].append(value)
+ def pop(self):
 
-      vals=self.group[self.maxfreq].pop()
-      self.freq[vals]-=1
-      if not self.group[self.maxfreq]:
-         self.maxfreq-=1
+   max_val=self.grouping[self.max_frquency].pop()
 
-      return vals    
+   self.frquenc_map[max_val]-=1
+
+   if not self.grouping[self.max_frquency]:
+      self.max_frquency-=1
+
+   return max_val
+
+
 
 freqStack = FreqStack()
 freqStack.push(5)  # Stack: [5]
