@@ -1,0 +1,58 @@
+Given a string str, return true if it is possible to re-arrange the string into a palindrome, and false if not.
+
+eg: cdd => true or cbtre => false
+
+Palindrome: "a word, phrase, or sequence that reads the same backward as forward, e.g., madam"
+
+2 
+Say that 2 strings "match" if they are non-empty and their first chars are the same.
+
+Loop over and then return the given array as follows: if a string matches an earlier string in the array, swap the 2 strings in the array. When a position in the array has been swapped, it no longer matches anything.
+
+Using a map, this can be solved by making just one pass over the array.
+
+["aONE", "aTWO"] → ["aTWO", "aONE"]
+
+["aONE","aTWO","aTHREE","aFOUR"]→ 
+["aTWO","aONE","aFOUR","aTHREE"]
+
+["aONE", "bONE", "aTWO", "bTWO", "aTHREE", "aFOUR", "bONE", "bTWO"] → 
+["aTWO", "bTWO", "aONE", "bONE", "aFOUR", "aTHREE", "bTWO", "bONE"]
+Assume all the strings are only 
+
+3 Given two strings ransomNote and magazine, return true if ransomNote can be constructed from magazine and false otherwise.
+
+Each letter in magazine can only be used once in ransomNote.
+
+Example 1:
+
+Input: ransomNote = "a", magazine = "b"
+Output: false
+Example 2:
+
+Input: ransomNote = "aa", magazine = "ab"
+Output: false
+Example 3:
+
+Input: ransomNote = "aa", magazine = "aab"
+Output: true
+
+
+Given a string array chars and an integer k, return an array of the k most frequent elements in descending order of frequency. If there is no difference in frequency, we should default to the order in which the elements originally appeared.
+
+eg: ['a', 'b', 'a', 'b', 'b', 'c'], k = 2 => ['b', 'a'].
+
+In this case b has a frequency of 3, so it's first. a has a frequency of 2, so it comes second. And so on.
+
+You may use your language's built-in sorting function for convenience.
+
+4 Given a string array chars and an integer k, return an array of the k most frequent elements in descending order of frequency. If there is no difference in frequency, we should default to the order in which the elements originally appeared.
+
+eg: ['a', 'b', 'a', 'b', 'b', 'c'], k = 2 => ['b', 'a'].
+
+In this case b has a frequency of 3, so it's first. a has a frequency of 2, so it comes second. And so on.
+
+You may use your language's built-in sorting function for convenience.
+
+5 Given an array of strings, count the number of unique values.
+Assume that the strings are all lowercase letters and are at least 1 character long.
