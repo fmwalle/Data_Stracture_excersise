@@ -42,3 +42,26 @@ def check_constraction(word1,word2):
 print(check_constraction("a", "b"))       # Output: False
 print(check_constraction("aa", "ab"))     # Output: False
 print(check_constraction("aa", "aab"))
+
+def solution(list1,k)->list:
+   
+   if not list1:
+      return []
+   if k==0:
+      return list1
+   mapping={}
+   result=[]
+   for char in list1:
+      mapping[char]=mapping.get(char,0)+1
+
+   sorted_map=sorted(mapping.items() ,key=lambda item:item[1])
+   for key ,value in sorted_map:
+      if value>=k:
+         result.append(key)
+      
+
+   return result
+
+print(solution(['a', 'b', 'a', 'b', 'b', 'c'],2))
+
+      
