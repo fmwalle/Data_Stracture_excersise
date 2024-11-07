@@ -54,11 +54,8 @@ def solution(list1,k)->list:
    for char in list1:
       mapping[char]=mapping.get(char,0)+1
 
-   sorted_map=sorted(mapping.items() ,key=lambda item:item[1])
-   for key ,value in sorted_map:
-      if value>=k:
-         result.append(key)
-      
+   sorted_map=sorted(mapping.items() ,key=lambda item: (-item[1], list1.index(item[0])))
+   result = [key for key, value in sorted_map[:k]]
 
    return result
 

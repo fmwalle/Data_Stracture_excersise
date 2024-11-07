@@ -38,7 +38,8 @@ Input: ransomNote = "aa", magazine = "aab"
 Output: true
 
 
-Given a string array chars and an integer k, return an array of the k most frequent elements in descending order of frequency. If there is no difference in frequency, we should default to the order in which the elements originally appeared.
+Given a string array chars and an integer k, return an array of the k most frequent elements in descending order of frequency. 
+If there is no difference in frequency, we should default to the order in which the elements originally appeared.
 
 eg: ['a', 'b', 'a', 'b', 'b', 'c'], k = 2 => ['b', 'a'].
 
