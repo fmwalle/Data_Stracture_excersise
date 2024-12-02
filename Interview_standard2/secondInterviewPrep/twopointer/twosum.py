@@ -18,7 +18,7 @@ def twoSum(array,target):
 def threeSum(nums):
     if len(nums)<3:
         return []
-
+    nums.sort()
     answer=[]
     for i in range(0,len(nums)-2):
         if i>0 and nums[i]==nums[i-1]:
@@ -29,9 +29,7 @@ def threeSum(nums):
         while left<right:
             sum=nums[i]+nums[left]+nums[right]
             if sum==0:
-                answer.append(nums[i])
-                answer.append(nums[left])
-                answer.append(nums[right])
+                answer.append([nums[i], nums[left], nums[right]])
                 left+=1
                 right-=1
                 while left<right and nums[left]==nums[left-1]:
@@ -43,5 +41,27 @@ def threeSum(nums):
             else:
                 right-=1              
     return answer
-print(threeSum([-1,0,1,2,-1,-4]))
+#print(threeSum([-1,0,1,2,-1,-4]))
 
+
+def maxArea(height):
+        """
+        :type height: List[int]
+        :rtype: int
+        """
+        left=0
+        right=len(height)-1
+        maximum=0
+        while left<right:
+            width=right-left
+            curr_height=min(height[left],height[right])
+            area=curr_height*width
+            maximum=max(area,maximum)
+
+            if height[left]<height[right]:
+                left+=1
+            else:
+                right-=1
+
+        return maximum         
+print(maxArea([1,8,6,2,5,4,8,3,7]))
