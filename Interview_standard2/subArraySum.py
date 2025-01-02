@@ -1,18 +1,15 @@
 def countSubarraySum(nums, k):
     if not nums:
         return []
-    
-    map_array={0:1}
     count=0
-    sum=0
+    mapping={0:1}
+    current_sum=0
+
     for num in nums:
-        sum+=num
-        if sum-k in map_array:
-            count+=map_array[sum-k]
-        if sum in map_array:
-            map_array[sum] += 1
-        else:
-            map_array[sum] = 1
+        current_sum+=num
+        if current_sum-k in mapping:
+            count+=mapping[current_sum-k]
+        mapping[current_sum]=mapping.get(current_sum,0)+1    
 
     return count
 
